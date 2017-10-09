@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">ATeamsTask</string>
-    <string name="title_home">Home</string>
+    <string name="app_name">A Teams Task</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Account details</string>
 </resources>
