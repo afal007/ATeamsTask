@@ -21,7 +21,7 @@
 
     <style name="EditText" parent="@style/Widget.AppCompat.EditText">
         <item name="android:textColor">@color/colorPrimaryText</item>
-        <item name="android:textColorHint">@color/colorSecondaryText</item>
+        <item name="android:textColorHint">@color/colorHintText</item>
     </style>
 
 </resources>

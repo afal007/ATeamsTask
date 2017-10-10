@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">A-TEAMS Task</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Account details</string>
+    <string name="title_contacts">Contacts</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dashboard_postid_hint">Post ID</string>
     <string name="dashboard_commentid_hint">Comment ID</string>
     <string name="dashboard_button_text">Show</string>
+    <string name="dashboard_todo_task_status">Task status</string>
 </resources>
