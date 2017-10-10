@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorSecondaryLight</item>
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
         <item name="editTextStyle">@style/EditText</item>
-        <item name="windowBackground">@color/windowBackground</item>
     </style>
 
     <style name="DashboardCardTheme" parent="AppTheme">
@@ -21,7 +20,7 @@
     </style>
 
     <style name="EditText" parent="@style/Widget.AppCompat.EditText">
-        <item name="textColor">@color/colorPrimaryText</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
         <item name="android:textColorHint">@color/colorSecondaryText</item>
     </style>
 
