@@ -7,13 +7,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.ButterKnife;
 import io.github.afal007.ateamstask.R;
 import io.github.afal007.ateamstask.controllers.fragment.DashboardFragment;
-import io.github.afal007.ateamstask.mvcviews.dashboard.DashboardViewMvc;
 import io.github.afal007.ateamstask.mvcviews.main.MainViewMvc;
 
 public class MainActivity extends AppCompatActivity
