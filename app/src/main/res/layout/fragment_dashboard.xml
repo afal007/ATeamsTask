@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,79 +7,87 @@
     tools:context="io.github.afal007.ateamstask.controllers.fragment.DashboardFragment">
 
     <LinearLayout
-        style="@style/DashboardCardTheme">
-        <EditText
-            android:id="@+id/et_dashboard_posts"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:hint="@string/dashboard_postid_hint"/>
-        <Button
-            android:id="@+id/button_dashboard_posts"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:text="@string/dashboard_button_text"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <LinearLayout
+            style="@style/DashboardCardTheme">
+            <EditText
+                android:id="@+id/et_dashboard_posts"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="@string/dashboard_postid_hint"/>
+            <Button
+                android:id="@+id/button_dashboard_posts"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:text="@string/dashboard_button_text"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/DashboardCardTheme" >
+                <EditText
+                    android:id="@+id/et_dashboard_comments"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:hint="@string/dashboard_commentid_hint" />
+
+                <Button
+                    android:id="@+id/button_dashboard_comments"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:text="@string/dashboard_button_text" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_dashboard_users"
+                style="@style/DashboardCardTheme" />
+
+            <android.support.v7.widget.AppCompatImageView
+                style="@style/DashboardCardTheme"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="0dp"
+                android:layout_gravity="center"
+                android:id="@+id/iv_dashboard_image"
+                android:scaleType="center"
+                android:contentDescription="@string/dashboard_todo_task_status" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_dashboard_todos"
+                style="@style/DashboardCardTheme">
+                <TextView
+                    android:id="@+id/tv_dashboard_todo_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Fal Alexandr"
+                    tools:layout_editor_absoluteX="6dp" />
+                <TextView
+                    android:id="@+id/tv_dashboard_todo_details"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    tools:text="Task text. Some text describing task. Task description. Lul kek cheburek. London is the capital of Great Britain. Great Britain is the capital of London."
+                    tools:layout_editor_absoluteX="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_todo_username"/>
+                <ImageView
+                    android:id="@+id/iv_dashboard_todo_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_done_not_red_24dp"
+                    android:contentDescription="@string/dashboard_todo_task_status"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_todo_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/DashboardCardTheme" >
-        <EditText
-            android:id="@+id/et_dashboard_comments"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:hint="@string/dashboard_commentid_hint" />
-
-        <Button
-            android:id="@+id/button_dashboard_comments"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:text="@string/dashboard_button_text" />
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_dashboard_users"
-        style="@style/DashboardCardTheme" />
-
-    <android.support.v7.widget.AppCompatImageView
-        style="@style/DashboardCardTheme"
-        android:id="@+id/iv_dashboard_image"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/dashboard_todo_task_status"
-        app:srcCompat="@drawable/img_lights" />
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/cl_dashboard_todos"
-        style="@style/DashboardCardTheme">
-        <TextView
-            android:id="@+id/tv_dashboard_todo_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Fal Alexandr"
-            tools:layout_editor_absoluteX="6dp" />
-        <TextView
-            android:id="@+id/tv_dashboard_todo_details"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:paddingTop="6dp"
-            tools:text="Task text. Some text describing task. Task description. Lul kek cheburek. London is the capital of Great Britain. Great Britain is the capital of London."
-            tools:layout_editor_absoluteX="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_todo_username"/>
-        <ImageView
-            android:id="@+id/iv_dashboard_todo_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_done_not_red_24dp"
-            android:contentDescription="@string/dashboard_todo_task_status"
-            app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_todo_details"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-    </android.support.constraint.ConstraintLayout>
-
-</LinearLayout>
+</ScrollView>
