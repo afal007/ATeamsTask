@@ -9,4 +9,12 @@
     <string name="dashboard_todo_task_status">Task status</string>
 
     <string name="tv_contacts_name">Alexander Fal</string>
+    <string name="contacts_phone_number">+7 (913) 750–63–25</string>
+    <string name="contacts_phone_number_hint">Mobile phone</string>
+    <string name="contacts_email">falalexandr007@gmail.com</string>
+    <string name="contacts_email_hint">Personal email</string>
+    <string name="contacts_vk">id11102210</string>
+    <string name="contacts_vk_hint">Vkontakte</string>
+    <string name="contacts_github">afal007</string>
+    <string name="contacts_github_hint">GitHub</string>
 </resources>
