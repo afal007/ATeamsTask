@@ -8,6 +8,5 @@
     <string name="dashboard_button_text">Show</string>
     <string name="dashboard_todo_task_status">Task status</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_contacts_name">Alexander Fal</string>
 </resources>
