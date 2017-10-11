@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import io.github.afal007.ateamstask.R;
+import io.github.afal007.ateamstask.mvcviews.contacts.ContactsViewMvc;
 
 /**
  * {@link Fragment} representing screen with my contacts.
@@ -21,6 +22,8 @@ import io.github.afal007.ateamstask.R;
 public class ContactsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+
+    private ContactsViewMvc mViewMvc;
 
     public ContactsFragment() {
         // Required empty public constructor
@@ -39,8 +42,8 @@ public class ContactsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contacts, container, false);
+        mViewMvc = new ContactsViewMvc(inflater, container);
+        return mViewMvc.getRootView();
     }
 
     @Override

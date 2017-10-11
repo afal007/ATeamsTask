@@ -7,17 +7,23 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import io.github.afal007.ateamstask.R;
+import io.github.afal007.ateamstask.controllers.fragment.ContactsFragment;
 import io.github.afal007.ateamstask.controllers.fragment.DashboardFragment;
+import io.github.afal007.ateamstask.mvcviews.contacts.ContactsViewMvc;
 import io.github.afal007.ateamstask.mvcviews.main.MainViewMvc;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
-        DashboardFragment.OnFragmentInteractionListener{
+        DashboardFragment.OnFragmentInteractionListener,
+        ContactsFragment.OnFragmentInteractionListener{
 
     private MainViewMvc mViewMvc;
+    private static int state;
+    private final static int DASHBOARD = 0;
+    private final static int CONTACTS = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,8 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = DashboardFragment.newInstance();
 
+        state = DASHBOARD;
+
         getSupportFragmentManager().beginTransaction()
                 .add(mViewMvc.getFragmentContainerId(), fragment)
                 .commit();
@@ -39,10 +47,16 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.navigation_dashboard:
-                Toast.makeText(this, "Dashboard", Toast.LENGTH_SHORT).show();
+                if(state != DASHBOARD) {
+                    swapFragment(DashboardFragment.newInstance());
+                    state = DASHBOARD;
+                }
                 return true;
             case R.id.navigation_contacts:
-                Toast.makeText(this, "Contacts", Toast.LENGTH_SHORT).show();
+                if(state != CONTACTS) {
+                    swapFragment(ContactsFragment.newInstance());
+                    state = CONTACTS;
+                }
                 return true;
         }
         return false;
@@ -58,5 +72,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    private void swapFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(mViewMvc.getFragmentContainerId(), fragment)
+                .commit();
     }
 }
