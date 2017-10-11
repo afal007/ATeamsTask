@@ -81,7 +81,7 @@
                     android:id="@+id/iv_dashboard_todo_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_done_not_red_24dp"
+                    android:src="@drawable/ic_done_not_secondary_color_24dp"
                     android:contentDescription="@string/dashboard_todo_task_status"
                     app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_todo_details"
                     app:layout_constraintEnd_toEndOf="parent"

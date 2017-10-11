@@ -9,7 +9,7 @@
     <color name="colorSecondaryDark">#9b0000</color>
 
     <color name="colorPrimaryText">#222222</color>
-    <color name="colorSecondaryText">#444444</color>
+    <color name="colorSecondaryText">#777</color>
     <color name="colorHintText">#e6e6e6</color>
 
     <color name="windowBackground">#e1e1e1</color>
